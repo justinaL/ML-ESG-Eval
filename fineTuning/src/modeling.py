@@ -36,7 +36,7 @@ class ESGClassifier():
             fp16=True
             )
 
-    def preprocess(self, ds, select=True):
+    def preprocess(self, ds):
         prepared = []
         min_length = min(len(d) for d in ds)
 

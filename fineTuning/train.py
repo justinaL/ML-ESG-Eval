@@ -12,16 +12,15 @@ from src.train_utils import *
 parser = argparse.ArgumentParser(description='ESGClassifier-train')
 
 parser.add_argument("--base_model", type=str, default="bert-base-multilingual-uncased", help="Base encoding model")
-parser.add_argument("--labels", type=str, default='labels.pickle', help="ESG labels")
-parser.add_argument("--select", type=bool, default=False, help="balance dataset or not")
+parser.add_argument("--labels", type=str, default='data/labels.pickle', help="ESG labels")
 parser.add_argument("--best_model_metric", type=str, default="f1_macro")
 
-parser.add_argument("--out_path", type=str, default="mbert-finetuned-esg-uncased", help="checkpoints save path")
+parser.add_argument("--model_name", type=str, default="mbert-finetuned-esg-uncased", help="model name")
 parser.add_argument("--batch_size", type=int, default=16, help="batch size")
 parser.add_argument("--epoch", type=int, default=5)
 parser.add_argument("--lr", type=int, default=2e-5)
 parser.add_argument("--attn_dropout", type=float, default=0.1, help="model attention dropout value")
-parser.add_argument("--best_model_name", type=str, default="best_models")
+parser.add_argument("--best_model_dir", type=str, default="directory to save best_models")
 
 params = parser.parse_args()
 
@@ -46,7 +45,7 @@ params.labels = pd.read_pickle(params.labels)
 params.id2label = {idx: label for idx, label in enumerate(params.labels)}
 params.label2id = {label: idx for idx, label in enumerate(params.labels)}
 
-out_dir = params.out_path
+out_dir = params.model_name
 
 for seed in [12345,34567,56789]:
 
@@ -58,7 +57,7 @@ for seed in [12345,34567,56789]:
     model = ESGClassifier(params)
 
     ## preprocess datasets
-    encoded_dataset,_ = model.preprocess([en,fr,zh], select=params.select)
+    encoded_dataset,_ = model.preprocess([en,fr,zh])
 
     ## cast labels to float
     encoded_dataset = cast_to_format(encoded_dataset, ['train','val'], 'float32')
@@ -83,7 +82,7 @@ for seed in [12345,34567,56789]:
     trainer.save_metrics('train', train_metrics.metrics)
 
     today = datetime.today().strftime('%d%m%y')
-    trainer.save_model(f'best_models/{params.best_model_name}_{today}_{seed}_{params.epoch}ep')
+    trainer.save_model(f'{params.best_model_dir}/{params.model_name}_{today}_{seed}_{params.epoch}ep')
 
     print(f'>>> {datetime.now()} Evaluate model')
     eval_metrics = trainer.evaluate()
