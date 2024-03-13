@@ -26,7 +26,7 @@ python offTheShelf/train.py --pickle_path {YOUR_PICKLE_PATH}
 Test model.
 ```sh
 python offTheShelf/test.py --pickle_path {YOUR_PICKLE_PATH}
-                          --classifier_path {YOUR_OUTPUT_PATH}
+                           --classifier_path {YOUR_OUTPUT_PATH}
 ```
 
 ### Usage for fine-tuning experiments
@@ -34,17 +34,17 @@ GPU can be used for fine-tuning models during training.
 
 ```sh
 CUDA_VISIBLE_DEVICES=0 python fineTuning/train.py
---base_model {YOUR_BASE_MODEL_NAME}
---best_model_metric f1_macro
---model_name {YOUR_MODEL_NAME}
---epoch 50
---best_model_dir {DIR_TO_SAVE_MODELS}
+                                --base_model {YOUR_BASE_MODEL_NAME}
+                                --best_model_metric f1_macro
+                                --model_name {YOUR_MODEL_NAME}
+                                --epoch 50
+                                --best_model_dir {DIR_TO_SAVE_MODELS}
 ```
 
 Test model.
 ```sh
 CUDA_VISIBLE_DEVICES=0 python fineTuning/inference.py
---trained_model {YOUR_BEST_MODEL}
---out_path {DIR_TO_SAVE_RESULTS}
---test_file data/{LANG}_test.pkl
+                                --trained_model {YOUR_BEST_MODEL}
+                                --out_path {DIR_TO_SAVE_RESULTS}
+                                --test_file data/{LANG}_test.pkl
 ```
