@@ -6,7 +6,7 @@ This repository provides codes and dataset for the paper titled: *Evaluating Mul
 
 
 ### Dataset
-The modified dataset with a unifies label space will be provided on request, base on the requester have to been permitted to use the [original dataset](https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-2023/shared-task-esg-issue?authuser=0).
+The modified dataset with a unified label space will be provided upon request, provided the requester has permission to use the [original dataset](https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-2023/shared-task-esg-issue?authuser=0).
 
 <!-- Datasets are `.json` files with an additional `bin_label` column storing lists of binarised labels per instance.
 
