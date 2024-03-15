@@ -6,11 +6,11 @@ This repository provides codes and dataset for the paper titled: *Evaluating Mul
 
 
 ### Dataset
-The modified dataset with a unifies label space is provided in `data/`.
+The modified dataset with a unifies label space will be provided on request, base on the requester have to been permitted to use the [original dataset](https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-2023/shared-task-esg-issue?authuser=0).
 
-Datasets are `.json` files with an additional `bin_label` column storing lists of binarised labels per instance.
+<!-- Datasets are `.json` files with an additional `bin_label` column storing lists of binarised labels per instance.
 
-`data/labels.pickles` is the list of 35 pre-defined ESG key issues (labels).
+`data/labels.pickles` is the list of 35 pre-defined ESG key issues (labels). -->
 
 
 ### Usage for off-the-shelf experiments
