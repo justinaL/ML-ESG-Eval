@@ -2,7 +2,7 @@
 
 <!-- Wing Yan Li, Emmanuele Chersoni, Cindy Sing Bik Ngai. 2024 *Evaluating Multilingual Language Models for Cross-Lingual ESG Issue Identification.* Under Review. -->
 
-This repository provides codes and dataset for the paper titled: *Evaluating Multilingual Language Models for Cross-Lingual ESG Issue Identification*. Under Review.
+This repository provides codes and dataset for the paper titled: *Evaluating Multilingual Language Models for Cross-Lingual ESG Issue Identification*. Joint Workshop of the 7th Financial Technology and Natural Language Processing (FinNLP) and the 5th Knowledge Discovery from Unstructured Data in Financial Services (KDF).
 
 
 ### Dataset
