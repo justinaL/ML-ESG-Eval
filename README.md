@@ -1,4 +1,4 @@
-# Eavaluating Multilingual Language Models for Cross-Lingual ESG Issue Identification
+# Evaluating Multilingual Language Models for Cross-Lingual ESG Issue Identification
 
 <!-- Wing Yan Li, Emmanuele Chersoni, Cindy Sing Bik Ngai. 2024 *Evaluating Multilingual Language Models for Cross-Lingual ESG Issue Identification.* Under Review. -->
 
